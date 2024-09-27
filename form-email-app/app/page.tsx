@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
@@ -10,10 +9,10 @@ export default function Home() {
     message: "",
   })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -45,19 +44,19 @@ export default function Home() {
           <label htmlFor="" className="block text-gray-700 text-sm font-medium mb-1">
             Name:
           </label>
-          <input type="text" value={formData.name} required onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-2 border border-gary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" value={formData.name} required onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-2 border border-gary-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div>
           <label htmlFor="" className="block text-gray-700 text-sm font-medium mb-1">
             Email:
           </label>
-          <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required className="w-full px-4 py-2 border border-gary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required className="w-full px-4 py-2 border border-gary-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div className="flex flex-col">
           <label htmlFor="" className="block text-gray-700 text-sm font-medium mb-1">
             Message:
           </label>
-          <textarea name=""  rows={5} required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-2 border border-gary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <textarea name=""  rows={5} required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-2 border border-gary-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div>
           <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg">
