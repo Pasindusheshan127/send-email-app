@@ -9,7 +9,7 @@ export default function Home() {
     message: "",
   })
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e:React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await fetch('/api/sendEmail', {
